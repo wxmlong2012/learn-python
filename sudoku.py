@@ -11,7 +11,6 @@ puzzle = [
     [1,2,0,0,0,7,4,0,0],
     [0,4,9,2,0,6,0,0,7]
 ]
-puzzle = [[0 for j in range(9)] for i in range(9)]
 
 
 def print_sudoku(puzzle):
