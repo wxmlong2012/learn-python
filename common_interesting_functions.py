@@ -17,3 +17,19 @@ def fibonacci(n):
         return fibonacci(n-1) + fibonacci(n-2)
 
 
+
+"""
+we can use the <yield> keyword to convert any Python function into a Python generator. 
+Yields function similarly to a conventional return keyword. However, it will always return a generator object.
+"""
+def creating_gen(index):
+    months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+    for i in range(index):
+        yield months[i]
+        
+# create a generator, can use next function to get its values, or use for loop.
+next_month = creating_gen(5) 
+next(next_month)
+for month in next_month:
+    print(month)
+
