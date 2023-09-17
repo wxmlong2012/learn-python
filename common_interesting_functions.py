@@ -61,11 +61,31 @@ Given a positive integer num, write a function that returns True if num is a per
 """
 def perfect_square(num):
     num_sqrt = int(num**0.5)
-    if num == num_sqrt**2:
-        return True
-    return False
+    result = num == num_sqrt**2
+    return result
 
 perfect_square(25)
 perfect_square(10)
+
+
+"""
+without using any package
+Given an integer n, return the number of trailing zeroes in n factorial n!
+"""
+def factorial_training_zeros(n):
+    fact = 1
+    while n > 1:
+        fact *= n
+        n -= 1
+
+    count = 0
+    fact_str = str(fact)[::-1]
+    for s in fact_str:
+        if s == "0":
+            count += 1
+        else:
+            break
+    return count
+
 
 
