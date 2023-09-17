@@ -117,3 +117,24 @@ remove duplicates from a list or array
 list1 = [1,1,2,3,3]
 list2 = [1,1,1,2,2,2,3,3,4,5,6,7,8]
 list(set(list1))
+
+def remove_dups(array):
+    new_array = [array[0]]
+    for i in array:
+        if i != new_array[-1]:
+            new_array.append(i)
+    return new_array
+
+# just count the number of unique values (list are ordered)
+def count_unique(array):
+    n_unique = 0
+    for i in range(len(array) - 1):
+        if array[i] != array[i+1]:
+            n_unique += 1
+    return n_unique
+
+remove_dups(list1)        
+remove_dups(list2)
+count_unique(list1)
+count_unique(list2)
+
