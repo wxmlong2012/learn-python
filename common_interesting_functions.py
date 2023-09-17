@@ -73,14 +73,13 @@ without using any package
 Given an integer n, return the number of trailing zeroes in n factorial n!
 """
 def factorial_training_zeros(n):
-    fact = 1
+    fact = n
     while n > 1:
-        fact *= n
+        fact *= n - 1
         n -= 1
 
     count = 0
-    fact_str = str(fact)[::-1]
-    for s in fact_str:
+    for s in str(fact)[::-1]:
         if s == "0":
             count += 1
         else:
@@ -89,3 +88,32 @@ def factorial_training_zeros(n):
 
 
 
+"""
+You are provided with a large string and a dictionary of the words. 
+You have to find if the input string can be segmented into words using the dictionary or not.
+"""
+
+def word_segmentation(word, dictionary):
+
+    for i in range(1, len(word)+1):
+        word1 = word[0:i]
+        if word1 in dictionary:
+            word2 = word[i:]
+            if (word2 in dictionary) \
+                    or (not word2) \
+                    or word_segmentation(word2, dictionary):
+                return True
+    return False
+
+w1 = "shank3cancauseautism"
+w2 = "shank3cannotcauseautism"
+dictionary = ["shank3", "can", "cause", "autism", "cam", "lack"]
+
+word_segmentation(w1, dictionary)
+
+"""
+remove duplicates from a list or array
+"""
+list1 = [1,1,2,3,3]
+list2 = [1,1,1,2,2,2,3,3,4,5,6,7,8]
+list(set(list1))
