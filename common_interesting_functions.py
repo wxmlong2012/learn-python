@@ -33,3 +33,39 @@ next(next_month)
 for month in next_month:
     print(month)
 
+
+"""
+# replace a character in a string text without using .replace() function
+"""
+def replace_str(text, old, new):
+    result = ""
+    for s in text:
+        if s == old:
+            s = new
+        result += s
+    return result
+
+text = "D t C mpBl ckFrid yS le"
+old = " "
+new = "a"
+
+replace_str(text, old, new)
+
+# Use .replace() function
+text = "D t C mpBl ckFrid yS le"
+text.replace(old, new)
+
+
+"""
+Given a positive integer num, write a function that returns True if num is a perfect square else False.
+"""
+def perfect_square(num):
+    num_sqrt = int(num**0.5)
+    if num == num_sqrt**2:
+        return True
+    return False
+
+perfect_square(25)
+perfect_square(10)
+
+
