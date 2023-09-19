@@ -138,3 +138,12 @@ remove_dups(list2)
 count_unique(list1)
 count_unique(list2)
 
+
+
+"""
+Create a lambda function to calculate square of a number
+"""
+square = lambda x: x**2
+
+
+
